@@ -86,8 +86,8 @@ class Player(Character):
     def useWeapon(self, weapon):
         if weapon in self.inventory.keys():
             weapon_obj = self.inventory[weapon]
-            if self.sp > weapon_obj.sta_cost:
-                self.sp -= weapon_obj.sta_cost
+            if self.sp > weapon_obj.sp_cost:
+                self.sp -= weapon_obj.sp_cost
                 return randint(*weapon_obj.dmg_range)
             else:
                 print('Not enough sp')
@@ -126,7 +126,7 @@ player.makeInventory()
 player.addToInventory({'Gun' : (20,30)})
 player.displayInventory()
 """
-
+spider = Enemy()
 """print('enter anything >> ')
 i = input().capitalize()
 print(i)"""
